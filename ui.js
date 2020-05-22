@@ -13,9 +13,10 @@ class UI {
 
   //need to adjust this for the new api I'm using to get the correct names
   paint(weather) {
+    console.log(weather.wind)
     this.location.textContent = weather.name;
     this.desc.textContent = weather.weather[0].description;
-    this.string.textContent = (Math.round(weather.main.temp) + ' F');
+    this.string.textContent = (weather.main.temp + ' F');
     this.icon.setAttribute('src', `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`);
     this.humidity.textContent = `Relative Humidity: ${weather.main.humidity}`;
     this.feelsLike.textContent = `Feels Like: ${weather.main.feels_like}`;
